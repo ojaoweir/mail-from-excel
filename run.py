@@ -1,0 +1,5 @@
+emailContentFile = open("Files/email_text.txt")
+emailTemplateFile = open("email_content.html", "w")
+emailTemplateFile.write(emailContentFile.read())
+print(emailContentFile.read())
+emailContentFile.close()
