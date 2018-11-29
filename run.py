@@ -24,3 +24,5 @@ for receiver in receivers:
 
 # Step 5: Close Server
 closeServer(server)
+
+# Step 6: Close application
