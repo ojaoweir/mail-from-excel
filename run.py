@@ -1,6 +1,7 @@
 from code_files.fill_template import fillTemplate
-from code_files.read_excel import getReceivers, getLogin
-from code_files.send_mail import startServer
+from code_files.read_excel import getReceivers, getLogin, getHeader
+from code_files.send_mail import startServer,sendMail,closeServer
+from code_files.rendering import generateEmailTemplate
 
 # Step 1: Reading the text for the mail, styling it as a simple HTML
 fillTemplate()

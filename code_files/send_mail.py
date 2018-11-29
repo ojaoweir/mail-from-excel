@@ -1,4 +1,6 @@
 import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 # starts connection mailserver
 def startServer(login):
@@ -16,6 +18,7 @@ def startServer(login):
 # closes connection to mailserver
 def closeServer(server):
     server.quit()
+    print("logging out")
 
 # sends an mail with the details imported
 def sendMail(template, subject, sender, receiver, server):
@@ -29,4 +32,5 @@ def sendMail(template, subject, sender, receiver, server):
     msg.attach(content)
     # sends the mail
     server.send_message(msg)
+    print("Subject: " + subject + " sent to " + receiver)
     del msg

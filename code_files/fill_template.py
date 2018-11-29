@@ -5,12 +5,25 @@ def fillTemplate():
     emailTemplateFile.write(emailHTMLFile.read())
     emailHTMLFile.close()
 
-    emailContentFile = open("Files/email_text.txt")
-    emailTemplateFile.write(emailContentFile.read())
-    emailContentFile.close()
+    printText(emailTemplateFile)
 
     emailHTMLFile = open("templates/template_end.html")
+    emailFooterFile = open("Files/footer_picture.txt")
+    emailTemplateFile.write("<img src='" + emailFooterFile.read() + "'></img>" + emailHTMLFile.read())
     emailTemplateFile.write(emailHTMLFile.read())
     emailHTMLFile.close()
+    emailFooterFile.close()
 
     emailTemplateFile.close()
+
+def printText(emailTemplateFile):
+    emailContentFile = open("Files/email_text.txt")
+    text = emailContentFile.read()
+
+    for c in text:
+        if c == "\n":
+            emailTemplateFile.write("<br>")
+        else:
+            emailTemplateFile.write(c)
+
+    emailContentFile.close()
