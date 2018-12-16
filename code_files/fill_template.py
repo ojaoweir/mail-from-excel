@@ -10,7 +10,7 @@ def fillTemplate():
 
     emailHTMLFile = open("templates/template_end.html")
     emailFooterFile = open("Files/footer_picture.txt")
-    emailTemplateFile.write("<img src='" + emailFooterFile.read() + "''></img>" + emailHTMLFile.read())
+    #emailTemplateFile.write("<img src='" + emailFooterFile.read() + "' style='width = 50; height = 50;'></img>" + emailHTMLFile.read())
     emailTemplateFile.write(emailHTMLFile.read())
     emailHTMLFile.close()
     emailFooterFile.close()
